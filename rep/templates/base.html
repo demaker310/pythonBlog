@@ -1,0 +1,121 @@
+{% load static %}
+{% load rep_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <meta name="description" content="{% block meta_description %}
+
+    {% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}
+
+    {% endblock %}">
+    <meta name="author" content="">
+
+    <title>{% block title %}
+
+    {% endblock %}</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'scss/sb-admin-2.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/stlyes.css' %}">
+
+
+</head>
+<body id="page-top">
+<div id="wrapper">
+    <!-- Sidebar -->
+    {% block sidebar %}
+
+    {% endblock %}
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar--light bg-white topbar mb-4 static-top shadow fixed-top">
+                <a href="/" class="navbar-brand text-dark mr-5">Learn Python</a>
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-success d-md-none rounded-circle mr-3 ">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Topbar Search -->
+                <!--Form bar enters the navigation at the point -->
+                <!--                Search Enters Here-->
+                {% include '_search.html' %}
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    {% include '_mobile_search.html' %}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-secondary mt-1">
+                           Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-secondary m-1">
+                            About
+                        </a>
+                    </li>
+
+
+                    <!-- Nav Item - User Information -->
+
+
+                </ul>
+
+            </nav>
+            <!-- Scroll to Top Button-->
+            <hr class="sidebar-divider mb-5 pb-4">
+
+            <div id="heading" class="mx-2">
+                <h3 class="h3 font-weight-lighter">
+                    {% block subtopic_header %}
+                    {% endblock %}
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-12 m-2">
+                    {% block content1 %}
+                    {% endblock %}
+                    {% block content2 %}
+                    {% endblock %}
+                    {% block content3 %}
+                    {% endblock %}
+                    {% block content4 %}
+                    {% endblock %}
+                    {% block content5 %}
+                    {% endblock %}
+                    {% block content6 %}
+                    {% endblock %}
+                    {% block content7 %}
+                    {% endblock %}
+                    {% block content8 %}
+                    {% endblock %}
+                    {% block content9 %}
+                    {% endblock %}
+                    {% block content10 %}
+                    {% endblock %}
+                </div>
+            </div>
+            {% include '_footer.html' %}
+        </div>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    </div>
+</div>
+<script src="{% static 'js/functions.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-easing/jquery.easing.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'js/sb-admin-2.js' %}"></script>
+</body>
+</html>

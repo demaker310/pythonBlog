@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load rep_tags %}
+{% block sidebar %}
+    {% all_topic %}
+{% endblock %}
+{% block title %}
+    Search Results For {{ search_string }}
+{% endblock %}
+{% block meta_description %}
+    Search results for {{ search_string }}
+{% endblock %}
+{% block meta_keywords %}
+{% endblock %}
+{% block content1 %}
+    {% if search_string %}
+        <h4 class="font-weight-light ml-2">SubTopics containing <strong>'{{ search_string }}'</strong></h4>
+        <h5 class="ml-2">
+            {% with results.count as total_results %}
+                Found {{ total_results }} result{{ total_results|pluralize }}
+            {% endwith %}
+        </h5>
+        {% for page in results %}
+            <div class="bg-gray-200 rounded">
+                <div class="ml-2">
+                    <span class="h4 text-justify"><a
+                            href="{{ page.topic.get_absolute_url }}">{{ page.topic.name|capfirst }}</a></span>
+                    <span class="fa fa-chevron-right ml-1"></span><span class="fa fa-chevron-right mr-1"></span>
+                    <span class="h5 text-justify"><a
+                            href="{{ page.get_absolute_url }}">{{ page.sub_topic|capfirst }}</a></span>
+                </div>
+                <p class="text-muted font-italic ml-2">{{ page.description|truncatewords:20|capfirst }}
+                </p>
+            </div>
+        {% empty %}
+            <p>There are no results for your query</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

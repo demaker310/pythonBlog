@@ -1,0 +1,26 @@
+
+.options-container > .options:hover {
+    transition: all ease-in 200ms;
+}
+
+.options-container > .options:active {
+    transition: all ease-in 200ms;
+
+}
+.sidebar .nav-item .collapse .collapse-inner .collapse-item, .sidebar .nav-item .collapsing .collapse-inner .collapse-item {
+    margin: 0;
+}
+@media (max-width: 576px) {
+    .fa-python{
+        padding-right: 1.3rem;
+        padding-left: 1rem;
+    }
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+

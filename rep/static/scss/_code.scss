@@ -1,0 +1,25 @@
+span.space{
+  padding: 8px;
+}
+span.pythonOutput{
+  color: $gray-800;
+}
+.pythonKeyword{
+  color: $purple;
+  font-size: .85rem;
+  font-family: "JetBrains Mono", monospace;
+}
+.pythonBreaker{
+  padding-right: 1.5rem;
+  color: $primary;
+}
+.pythonString{
+  color: $warning;
+}
+.pythonFunction{
+  color: $danger;
+}
+pre{
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+}

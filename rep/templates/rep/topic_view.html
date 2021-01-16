@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load rep_tags %}
+{% block title %}
+    {{ topic.name|capfirst }} | Learn Python
+{% endblock %}
+{% block sidebar %}
+{% all_topic %}
+{% endblock %}
+
+{% block meta_keywords %}{{ topic.meta_keywords }}{% endblock %}
+{% block meta_description %}{{ topic.meta_desc }}{% endblock %}
+{% block subtopic_header %}{{ topic.name|capfirst }}{% endblock %}
+{% block content1 %}
+    <div class="card">
+        <div class="card-body px-1 pt-1">
+            <h2 class=" font-italic ml-2">Sub Topics</h2>
+            {% for sub_topics in all_topics %}
+                <h3 class="lead ml-2">
+                    <a href="{{ sub_topics.get_absolute_url }}">{{ sub_topics.sub_topic }}</a>
+                </h3>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
+

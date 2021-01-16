@@ -1,0 +1,39 @@
+{% load rep_tags %}
+<ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion scroll" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+
+    <!-- Heading -->
+    <hr class="sidebar-divider mb-5 pb-4">
+    <div class="sidebar-heading">
+        Core Python {{ all_topics|first }}
+    </div>
+    {% for foo in all_topics %}
+        <li class="nav-item">
+            <a class="nav-link collapsed py-0" href="{{ foo.get_absolute_url }}" data-toggle="collapse"
+               data-target="#collapse{{ forloop.counter }}"
+               aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                <span>{{ foo.name|capfirst}}</span>
+            </a>
+            <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}"
+                 data-parent="#accordionSidebar">
+                <div class="bg-light collapse-inner rounded p-0 options-container">
+                    {% with all_sub_topics=foo.subtopics.all %}
+                        {% for bar in all_sub_topics %}
+                            <a class="collapse-item options" href="{{ bar.get_absolute_url }}">{{ bar.slug|capfirst}}
+                            </a>
+                        {% endfor %}
+                    {% endwith %}
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+    <hr class="sidebar-divider my-0">
+    <div class="sidebar-heading">
+        Advanced Topics
+    </div>
+
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>

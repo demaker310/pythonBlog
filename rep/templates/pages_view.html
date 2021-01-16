@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{ topic.name|capfirst }} | Learn Python
+{% endblock %}
+{% block meta_keywords %}{{ topic.meta_keywords }}{% endblock %}
+{% block meta_description %}{{ topic.meta_desc }}{% endblock %}
+{% block subtopic_header %}{{ topic.name|capfirst }}{% endblock %}
+{% block content1 %}
+    <div class="card shadow">
+        <div class="card-body px-1 pt-1">
+            <h5 class=" font-italic text-center">Monty Python</h5>
+            <hr class="w-25">
+            <p class="text-lg">Python is an object oriented programming language developed bu Guido Van Rossum</p>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+
+                    <div class="card bg-light rounded-0">
+                        <div class="card-body py-1 px-2">
+<pre>
+<span><span class="pythonKeyword">def</span><span class="pythonFunction"> main</span>():</span>
+<span>  <span class="pythonKeyword">if</span>(name == '<span class="pythonString">my aname</span>'):</span>
+<span>      <span class="pythonFunction">print</span>('My name')</span>
+</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
